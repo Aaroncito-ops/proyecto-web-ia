@@ -33,6 +33,8 @@
 
     const statusFilter = document.getElementById("statusFilter");
     const speciesFilter = document.getElementById("speciesFilter");
+    const sortOrder = document.getElementById("sortOrder");
+
 
     const charactersGrid = document.getElementById("charactersGrid");
     const favoritesGrid = document.getElementById("favoritesGrid");
@@ -49,7 +51,8 @@
         !charactersGrid ||
         !favoritesGrid ||
         !resultsCount ||
-        !statusMessage
+        !statusMessage ||
+        !sortOrder ||
     ) {
         console.error(
             "Multiverse Explorer: faltan elementos HTML necesarios."
@@ -722,7 +725,34 @@
         tarjeta.appendChild(contenido);
 
         return tarjeta;
-    }
+       }
+         
+         // ==========================================
+         // ORDENAR PERSONAJES ALFABÉTICAMENTE
+         // ==========================================
+         
+         function ordenarPersonajes(personajes) {
+             // Crear una copia para proteger el orden original
+             const copia = [...personajes];
+         
+             if (sortOrder.value === "az") {
+                 copia.sort((a, b) =>
+                     a.name.localeCompare(b.name, "es", {
+                         sensitivity: "base"
+                     })
+                 );
+         
+             } else if (sortOrder.value === "za") {
+                 copia.sort((a, b) =>
+                     b.name.localeCompare(a.name, "es", {
+                         sensitivity: "base"
+                     })
+                 );
+             }
+         
+             // Si el orden es "original", no aplicamos sort()
+             return copia;
+         }
 
     // ==========================================
     // 18. MOSTRAR PERSONAJES DEL EXPLORADOR
@@ -730,10 +760,12 @@
 
     function mostrarPersonajes(personajes) {
         personajesActuales = personajes;
+        const personajesOrdenados = ordenarPersonajes(personajesActuales);
+
 
         const fragmento = document.createDocumentFragment();
 
-        personajesActuales.forEach((personaje) => {
+        personajesOrdenados.forEach((personaje) => {
             const tarjeta = crearTarjeta(personaje);
 
             fragmento.appendChild(tarjeta);
@@ -943,6 +975,16 @@
         "change",
         cargarPersonajes
     );
+   
+    // Ordenar sin consultar nuevamente la API
+    sortOrder.addEventListener("change", () => {
+        if (personajesActuales.length === 0) {
+            return;
+        }
+   
+        mostrarPersonajes(personajesActuales);
+    });
+
 
     // ==========================================
     // 21. SINCRONIZACIÓN ENTRE PESTAÑAS
