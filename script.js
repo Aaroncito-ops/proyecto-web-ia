@@ -52,7 +52,7 @@
         !favoritesGrid ||
         !resultsCount ||
         !statusMessage ||
-        !sortOrder ||
+        !sortOrder 
     ) {
         console.error(
             "Multiverse Explorer: faltan elementos HTML necesarios."
