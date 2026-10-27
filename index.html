@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Rick and Morty: Multiverse Explorer. Explora personajes, descubre sus características y crea tu colección multiversal."
+    >
+    <meta name="theme-color" content="#06101e">
+
+    <title>Rick and Morty: Multiverse Explorer</title>
+
+    <!-- Hoja de estilos local -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Archivo JavaScript que se creará en otra etapa -->
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Enlace de accesibilidad -->
+    <a class="skip-link" href="#contenido">
+        Saltar al contenido principal
+    </a>
+
+    <!-- =====================================
+         ENCABEZADO Y NAVEGACIÓN
+    ====================================== -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a
+                class="brand"
+                href="#inicio"
+                aria-label="Rick and Morty: Multiverse Explorer, ir al inicio"
+            >
+                <span class="brand-icon" aria-hidden="true"></span>
+
+                <span class="brand-text">
+                    <span class="brand-title">Rick and Morty:</span>
+                    <span class="brand-subtitle">Multiverse Explorer</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#explorar">Explorador</a>
+                <a href="#favoritos">Favoritos</a>
+                <a href="#acerca">Proyecto</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+    <main id="contenido">
+
+        <!-- =================================
+             HERO / PRESENTACIÓN
+        ================================== -->
+        <section
+            class="hero"
+            id="inicio"
+            aria-labelledby="heroTitle"
+        >
+            <div class="container hero-layout">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        <span class="signal-dot" aria-hidden="true"></span>
+                        SISTEMA DE EXPLORACIÓN MULTIVERSAL
+                    </p>
+
+                    <h1 id="heroTitle">
+                        El multiverso está
+                        <span class="gradient-text">
+                            a un portal de distancia.
+                        </span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Adéntrate en las dimensiones de Rick and Morty.
+                        Descubre personajes, investiga sus características
+                        y prepara tu propia colección de seres
+                        interdimensionales.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#explorar">
+                            Abrir el explorador
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <a class="btn btn-secondary" href="#favoritos">
+                            Mi colección
+                        </a>
+                    </div>
+
+                    <div class="hero-details">
+                        <span>
+                            <span class="detail-dot" aria-hidden="true"></span>
+                            Exploración de personajes
+                        </span>
+
+                        <span>
+                            <span class="detail-dot" aria-hidden="true"></span>
+                            Archivo multiversal
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Portal decorativo creado únicamente con CSS -->
+                <div class="hero-visual" aria-hidden="true">
+
+                    <div class="portal-stage">
+
+                        <div class="portal-orbit portal-orbit-one"></div>
+                        <div class="portal-orbit portal-orbit-two"></div>
+
+                        <div class="planet"></div>
+
+                        <div class="portal-ring">
+                            <div class="portal-core"></div>
+                        </div>
+
+                        <span class="portal-particle particle-one"></span>
+                        <span class="portal-particle particle-two"></span>
+                        <span class="portal-particle particle-three"></span>
+                        <span class="portal-particle particle-four"></span>
+
+                        <div class="hud-label hud-top">
+                            <span class="hud-light"></span>
+                            PORTAL // C-137
+                        </div>
+
+                        <div class="hud-label hud-bottom">
+                            MULTIVERSE SYSTEM
+                            <span class="hud-line"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             BUSCADOR INTERDIMENSIONAL
+        ================================== -->
+        <section
+            class="explorer-section section-space"
+            id="explorar"
+            aria-labelledby="explorerTitle"
+        >
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-kicker">
+                        MÓDULO 01 / EXPLORACIÓN
+                    </p>
+
+                    <h2 id="explorerTitle">
+                        Buscador <span>interdimensional</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Localiza personajes por nombre y utiliza filtros
+                        para explorar diferentes especies y estados.
+                    </p>
+
+                </div>
+
+                <!-- Panel de búsqueda -->
+                <form
+                    class="search-panel"
+                    role="search"
+                    aria-label="Buscar personajes del multiverso"
+                >
+
+                    <div class="search-control search-control-name">
+                        <label for="searchInput">
+                            Nombre del personaje
+                        </label>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            name="characterName"
+                            placeholder="Escribe un nombre..."
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="search-control">
+                        <label for="statusFilter">
+                            Estado
+                        </label>
+
+                        <select id="statusFilter" name="status">
+                            <option value="">Todos los estados</option>
+                            <option value="alive">Vivo</option>
+                            <option value="dead">Muerto</option>
+                            <option value="unknown">Desconocido</option>
+                        </select>
+                    </div>
+
+                    <div class="search-control">
+                        <label for="speciesFilter">
+                            Especie
+                        </label>
+
+                        <select id="speciesFilter" name="species">
+                            <option value="">Todas las especies</option>
+                            <option value="Human">Humano</option>
+                            <option value="Alien">Alienígena</option>
+                            <option value="Humanoid">Humanoide</option>
+                            <option value="Robot">Robot</option>
+                            <option value="Animal">Animal</option>
+                            <option value="unknown">Desconocida</option>
+                        </select>
+                    </div>
+
+                    <!-- Se activará mediante JavaScript posteriormente -->
+                    <button
+                        class="btn btn-primary search-button"
+                        type="button"
+                        id="searchButton"
+                    >
+                        Buscar
+                        <span aria-hidden="true">↗</span>
+                    </button>
+
+                </form>
+
+                <!-- Encabezado de resultados -->
+                <div class="results-toolbar">
+
+                    <div>
+                        <p class="section-kicker">
+                            ARCHIVO DE PERSONAJES
+                        </p>
+
+                        <h3>Personajes del multiverso</h3>
+                    </div>
+
+                    <p class="results-counter">
+                        <span
+                            id="resultsCount"
+                            aria-live="polite"
+                            aria-atomic="true"
+                        >0</span>
+                        resultados
+                    </p>
+
+                </div>
+
+                <!-- Área de mensajes de la aplicación -->
+                <div
+                    id="statusMessage"
+                    class="status-message"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+                    Vista previa: los personajes aparecerán aquí cuando
+                    conectemos la API mediante JavaScript.
+                </div>
+
+                <!--
+                    CONTENEDOR DINÁMICO DE PERSONAJES
+
+                    JavaScript agregará las tarjetas en otra etapa.
+
+                    Cada tarjeta mostrará:
+                    - Imagen
+                    - Nombre
+                    - Especie
+                    - Estado
+                    - Origen
+                    - Botón para agregar a favoritos
+
+                    No agregar personajes manualmente.
+                -->
+                <div
+                    id="charactersGrid"
+                    class="characters-grid"
+                ></div>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             MI COLECCIÓN MULTIVERSAL
+        ================================== -->
+        <section
+            class="favorites-section section-space"
+            id="favoritos"
+            aria-labelledby="favoritesTitle"
+        >
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-kicker">
+                        MÓDULO 02 / COLECCIÓN
+                    </p>
+
+                    <h2 id="favoritesTitle">
+                        Mi colección <span>multiversal</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Tu espacio para reunir personajes favoritos
+                        y conservarlos en tu archivo de exploración.
+                        Esta función se activará en una etapa posterior.
+                    </p>
+
+                </div>
+
+                <!--
+                    CONTENEDOR DINÁMICO DE FAVORITOS
+
+                    JavaScript colocará aquí las tarjetas
+                    de personajes seleccionados.
+
+                    Inicialmente permanece vacío.
+                -->
+                <div
+                    id="favoritesGrid"
+                    class="characters-grid favorites-grid"
+                ></div>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             INFORMACIÓN DEL PROYECTO
+        ================================== -->
+        <section
+            class="about-section section-space"
+            id="acerca"
+            aria-labelledby="aboutTitle"
+        >
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        SISTEMA / INFORMACIÓN
+                    </p>
+
+                    <h2 id="aboutTitle">
+                        Proyecto <span>Multiverse Explorer</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Un explorador interactivo de información
+                        inspirado en el universo de Rick and Morty
+                        y diseñado para consumir su API pública.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+                        <span class="feature-number">01</span>
+
+                        <h3>Descubrir</h3>
+
+                        <p>
+                            Consultar personajes y conocer
+                            su información dentro del multiverso.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <span class="feature-number">02</span>
+
+                        <h3>Investigar</h3>
+
+                        <p>
+                            Utilizar herramientas de búsqueda
+                            y filtros para encontrar personajes.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <span class="feature-number">03</span>
+
+                        <h3>Coleccionar</h3>
+
+                        <p>
+                            Seleccionar personajes favoritos
+                            para construir una colección personal.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =====================================
+         PIE DE PÁGINA
+    ====================================== -->
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <span class="footer-dot" aria-hidden="true"></span>
+                Rick and Morty: Multiverse Explorer
+            </div>
+
+            <p>
+                Proyecto académico desarrollado con HTML5, CSS3
+                y JavaScript puro.
+            </p>
+
+            <p class="footer-note">
+                Inspirado en Rick and Morty. Proyecto no oficial.
+            </p>
+
+            <a href="#inicio" class="back-to-top">
+                Volver al inicio ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
