@@ -1555,3 +1555,8 @@ section[id] {
     }
 
 }
+
+/* Selector de ordenamiento */
+.sort-control {
+    width: min(100%, 240px);
+}
