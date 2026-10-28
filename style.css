@@ -1213,7 +1213,7 @@ section[id] {
 }
 
 #favoritesGrid:empty::before {
-    content: "Tu colección está vacía. Aquí aparecerán tus personajes favoritos cuando se active esta función.";
+    content: "Tu colección está vacía. Explora el multiverso y guarda tus personajes favoritos.";
 
     min-height: 200px;
 
